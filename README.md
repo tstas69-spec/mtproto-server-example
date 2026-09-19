@@ -220,7 +220,7 @@ This repository is a working **MTProto server example**. The `install.sh` script
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-
+```
 What the script does:
 
 updates the system;
@@ -322,7 +322,7 @@ MTProto Server 示例
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-
+```
 安装脚本会完成：
 
 更新系统；
@@ -422,7 +422,7 @@ MTProto server、MTProto server example、MTProto proxy、Telegram MTProto serve
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-
+```
 يقوم السكربت بما يلي:
 
 تحديث النظام؛
@@ -513,7 +513,7 @@ MTProto server، MTProto server example، MTProto proxy، Telegram MTProto serve
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-
+```
 اسکریپت این کارها را انجام می‌دهد:
 
 سیستم را به‌روزرسانی می‌کند؛
