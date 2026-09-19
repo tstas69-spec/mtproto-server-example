@@ -67,7 +67,7 @@ MTProto server для Telegram
 
 ```bash
 sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-
+```
 Что делает скрипт:
 
 - обновляет систему;
