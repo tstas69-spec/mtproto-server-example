@@ -11,246 +11,337 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-<h1 align="center">🚀 MTProto Server — Example & One-Command Installer</h1>
+<h1>MTProto Server Example — One-Command Installer</h1>
 
-<p align="center">
-  <strong>Working example of an MTProto server for Telegram. Deploy your own proxy in one command.</strong><br>
-  <strong>Пример MTProto сервера для Telegram. Установка прокси за одну команду.</strong>
-</p>
+Пример настройки собственного MTProto server для Telegram: установка, конфигурация и подключение клиента к серверу.
 
-<br>
+Этот репозиторий предназначен для тех, кому нужен практический пример MTProto сервера без лишней инфраструктуры и сложной настройки.
 
-<p align="center">
-  <b>🌐 Выберите язык / Choose language / 选择语言 / اختر اللغة</b><br><br>
-  <a href="#ru"><img src="https://flagcdn.com/ru.svg" width="30" alt="Русский"> Русский</a> •
-  <a href="#en"><img src="https://flagcdn.com/gb.svg" width="30" alt="English"> English</a> •
-  <a href="#zh"><img src="https://flagcdn.com/cn.svg" width="30" alt="中文"> 中文</a> •
-  <a href="#ar"><img src="https://flagcdn.com/sa.svg" width="30" alt="العربية"> العربية</a>
-  <a href="#fa"><img src="https://flagcdn.com/ir.svg" width="30" alt="فارسی"> فارسی</a>
-</p>
+Готовая инструкция по установке и настройке:
 
-<br>
+👉 tstas69-spec.github.io
 
-<h2 align="center">⚡ One Command to Install an MTProto Server</h2>
+Язык
 
-<p align="center">
-  <code>sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"</code>
-</p>
+🇷🇺 Русский | 🇬🇧 English | 🇨🇳 中文 | 🇸🇦 العربية | 🇮🇷 فارسی
 
-<p align="center">
-  <a href="https://tstas69-spec.github.io/">
-    <img src="https://img.shields.io/badge/📖_Full_Guide_with_Screenshots-Click_Here-success?style=for-the-badge" alt="Full Guide">
-  </a>
-</p>
+Русский
+MTProto server для Telegram
 
-<hr>
+MTProto server — это сервер, который используется для работы Telegram-клиентов через протокол MTProto.
 
-<a id="ru"></a>
-## 🇷🇺 Русский
+Вместо готового стороннего решения можно развернуть собственный сервер и самостоятельно управлять его конфигурацией.
 
-**MTProto** — официальный протокол Telegram, который используется для обхода блокировок мессенджера. Он маскирует трафик под обычный HTTPS, поэтому провайдеру сложнее его отличить от рядового веб-серфинга — в отличие от классического VPN, который проще детектировать.
+Этот репозиторий содержит минимальный пример MTProto сервера и служит отправной точкой для самостоятельной установки.
 
-Этот репозиторий — рабочий **пример MTProto сервера**: скрипт `install.sh` поднимает прокси на вашем VPS одной командой, без ручной настройки Docker и firewall.
+Что здесь есть
+пример конфигурации MTProto server;
+базовая структура проекта;
+параметры сервера;
+пример запуска;
+инструкция по подключению Telegram-клиента;
+ссылки на дополнительные материалы.
+Быстрый старт
 
-### Требования
-- VPS с **Ubuntu 20.04 или 22.04**
-- Минимум: 1 ядро, 512 МБ RAM
-- Открытый порт 443
-- Доступ по SSH (root или sudo)
+Для практической установки и настройки сервера используется отдельная пошаговая инструкция:
 
-### 🚀 Установка одной командой
+👉 Установка и настройка MTProto server
 
-```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-```
+В ней последовательно разобраны необходимые действия: подготовка сервера, установка компонентов, настройка MTProto и подключение клиента.
 
-**Что делает скрипт:**
-- Обновляет систему
-- Устанавливает Docker и firewall (ufw)
-- Открывает порт 443
-- Запускает MTProto-прокси на порту 443 (образ `nineseconds/mtg:2`, Fake TLS)
-- Генерирует секретный ключ и готовую ссылку для Telegram
+Пример MTProto сервера
 
-### 📖 Как подключить прокси
-После установки вы получите ссылку вида:
+Упрощённая схема выглядит так:
 
-```
-tg://proxy?server=IP&port=443&secret=КЛЮЧ
-```
+Telegram client
+       |
+       v
+   MTProto
+    server
+       |
+       v
+ Telegram infrastructure
 
-Скопируйте её и вставьте в Telegram: **Настройки → Данные и память → Настройка прокси**.
+MTProto server работает как отдельный серверный компонент. Его можно развернуть на собственном VPS и настроить под необходимые параметры.
 
-### 🔗 Пошаговая инструкция с картинками
-Если вы новичок и хотите увидеть весь процесс с нуля — как арендовать VPS, подключиться по SSH и настроить сервер — там расписан каждый шаг со скриншотами:
+Для чего нужен собственный MTProto server
 
-👉 **[Полная инструкция →](https://tstas69-spec.github.io/)**
+Собственный сервер позволяет самостоятельно контролировать:
 
-<a id="en"></a>
-## 🇬🇧 English
+конфигурацию;
+параметры подключения;
+доступ к серверу;
+программное окружение;
+обновление и обслуживание;
+количество подключаемых клиентов.
 
-**MTProto** is Telegram's own protocol for bypassing network restrictions. It disguises traffic as regular HTTPS, which makes it harder for a provider to detect than a classic VPN.
+Это отличается от использования готового публичного сервера, параметры которого определяет его владелец.
 
-This repository is a working **MTProto server example**: `install.sh` spins up a proxy on your VPS in one command, no manual Docker or firewall setup needed.
+MTProto для Telegram
 
-### Requirements
-- VPS with **Ubuntu 20.04 or 22.04**
-- Minimum: 1 core, 512 MB RAM
-- Open port 443
-- SSH access (root or sudo)
+MTProto для Telegram используется клиентами Telegram для защищённого обмена данными.
 
-### 🚀 One-Command Installation
+Если задача заключается не в изучении протокола, а в практической настройке собственного сервера, удобнее использовать готовую пошаговую инструкцию:
 
-```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-```
+👉 Официальные материалы и инструкция по MTProto server
 
-**What the script does:**
-- Updates the system
-- Installs Docker and a firewall (ufw)
-- Opens port 443
-- Starts an MTProto proxy on port 443 (`nineseconds/mtg:2` image, Fake TLS)
-- Generates a secret key and a ready-to-use Telegram link
+Прокси-сервер MTProto для Telegram
 
-### 📖 Connecting the proxy
-After installation you'll get a link like:
+В контексте Telegram часто используется термин MTProto proxy. Такой сервер принимает подключения Telegram-клиентов и передаёт их дальше через инфраструктуру MTProto.
 
-```
-tg://proxy?server=IP&port=443&secret=KEY
-```
+Основные параметры зависят от используемой реализации и способа установки.
 
-Copy it and paste into Telegram: **Settings → Data and Storage → Proxy Settings**.
+В этом репозитории приведён именно практический пример конфигурации MTProto server.
 
-### 🔗 Full step-by-step guide
-New to this? The full guide covers everything from scratch — renting a VPS, connecting via SSH, and setting it all up, with screenshots for every step:
+Как подключить MTProto proxy для Telegram
 
-👉 **[Full guide →](https://tstas69-spec.github.io/mtproto-en.html)**
+После установки сервера клиенту необходимо передать параметры подключения.
 
-<a id="zh"></a>
-## 🇨🇳 中文
+Обычно это:
 
-**MTProto** 是 Telegram 官方用于绕过网络限制的协议。它将流量伪装成普通 HTTPS 流量，因此比传统 VPN 更难被运营商识别。
+адрес сервера;
+порт;
+secret;
+параметры, необходимые конкретной реализации MTProto.
 
-本仓库提供一个可用的 **MTProto 服务器示例**：`install.sh` 一条命令即可在您的 VPS 上启动代理，无需手动配置 Docker 和防火墙。
+Полная последовательность установки и подключения приведена здесь:
 
-### 系统要求
-- VPS，系统为 **Ubuntu 20.04 或 22.04**
-- 最低配置：1 核 CPU，512 MB 内存
-- 开放端口 443
-- SSH 访问权限（root 或 sudo）
+👉 MTProto server — пошаговая инструкция
 
-### 🚀 一键安装
+Структура проекта
+mtproto-server-example/
+├── README.md
+└── ...
 
-```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-```
+Репозиторий можно использовать как небольшой пример для изучения структуры MTProto server и как основу для собственной конфигурации.
 
-**脚本执行的操作：**
-- 更新系统
-- 安装 Docker 和防火墙（ufw）
-- 开放端口 443
-- 在 443 端口启动 MTProto 代理（`nineseconds/mtg:2` 镜像，Fake TLS 伪装）
-- 生成密钥并输出可直接使用的 Telegram 链接
+Важные термины
 
-### 📖 如何连接代理
-安装完成后，您会得到类似的链接：
+В материалах проекта используются следующие понятия:
 
-```
-tg://proxy?server=IP&port=443&secret=密钥
-```
+MTProto server
+MTProto proxy
+MTProto для Telegram
+прокси сервер MTProto для Telegram
+прокси сервер для Telegram
+пример MTProto сервера
+MTProto server example
+English
+MTProto Server Example
 
-复制并粘贴到 Telegram：**设置 → 数据和存储 → 代理设置**。
+This repository provides a practical MTProto server example for Telegram.
 
-### 🔗 完整分步教程
-新手用户可查看带截图的完整教程 — 从租用 VPS、通过 SSH 连接到最终配置，每一步都有说明：
+It can be used as a starting point for deploying and configuring your own MTProto server on a VPS.
 
-👉 **[查看完整教程 →](https://tstas69-spec.github.io/mtproto-zh.html)**
+👉 MTProto server installation and configuration guide
 
-<a id="ar"></a>
-## 🇸🇦 العربية
+What is MTProto server?
 
-**MTProto** هو بروتوكول Telegram الرسمي لتجاوز القيود المفروضة على الشبكة. يُخفي هذا البروتوكول حركة البيانات على أنها HTTPS عادية، مما يجعل اكتشافه أصعب مقارنة بشبكات VPN التقليدية.
+MTProto is the protocol used by Telegram clients for communication with Telegram infrastructure.
 
-هذا المستودع هو مثال عملي لـ **خادم MTProto**: يقوم ملف `install.sh` بتشغيل الوكيل على خادمك (VPS) بأمر واحد فقط، دون الحاجة لإعداد Docker أو جدار الحماية يدويًا.
+An MTProto server can be configured as an independent server component with its own connection parameters and access settings.
 
-### المتطلبات
-- خادم VPS بنظام **Ubuntu 20.04 أو 22.04**
-- الحد الأدنى: نواة واحدة، 512 ميجابايت رام
-- منفذ مفتوح 443
-- وصول SSH (root أو sudo)
+This repository focuses on the practical side of MTProto server configuration rather than protocol theory.
 
-### 🚀 التثبيت بأمر واحد
+MTProto server setup
 
-```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-```
+A typical setup looks like:
 
-**ما يقوم به السكربت:**
-- تحديث النظام
-- تثبيت Docker وجدار الحماية (ufw)
-- فتح المنفذ 443
-- تشغيل وكيل MTProto على المنفذ 443 (صورة `nineseconds/mtg:2`، تمويه Fake TLS)
-- إنشاء مفتاح سري ورابط جاهز لتطبيق Telegram
+Telegram client
+       |
+       v
+   MTProto
+    server
+       |
+       v
+ Telegram infrastructure
 
-### 📖 كيفية توصيل الوكيل
-بعد التثبيت ستحصل على رابط مثل:
+The exact installation steps depend on the selected implementation and server environment.
 
-```
-tg://proxy?server=IP&port=443&secret=المفتاح
-```
+For a complete step-by-step setup:
 
-انسخه والصقه في Telegram: **الإعدادات → البيانات والتخزين → إعدادات الوكيل**.
+👉 MTProto server guide
 
-### 🔗 الدليل الكامل خطوة بخطوة
-دليل كامل بالشرح والصور من الصفر — استئجار الخادم، الاتصال عبر SSH، والإعداد الكامل:
+MTProto proxy
 
-👉 **[الدليل الكامل →](https://tstas69-spec.github.io/mtproto-ar.html)**
+MTProto proxy is commonly used as a server-side component for Telegram connections.
 
-<a id="fa"></a>
-## 🇮🇷 فارسی
+Typical configuration parameters include:
 
-**MTProto** پروتکل رسمی تلگرام برای عبور از فیلترینگ و محدودیت‌های شبکه است. این پروتکل ترافیک را شبیه HTTPS معمولی می‌کند، به همین دلیل تشخیص آن برای اپراتور نسبت به یک VPN معمولی سخت‌تر است.
+server address;
+port;
+secret;
+client connection parameters.
 
-این مخزن یک نمونه‌ی کارِ **سرور MTProto** و راه‌اندازی **پروکسی تلگرام** است: اسکریپت `install.sh` با یک دستور، پروکسی را روی VPS شما راه‌اندازی می‌کند — بدون نیاز به تنظیم دستی Docker یا فایروال.
+See the installation guide for the complete configuration:
 
-### پیش‌نیازها
-- VPS با **اوبونتو ۲۰.۰۴ یا ۲۲.۰۴**
-- حداقل: ۱ هسته پردازنده، ۵۱۲ مگابایت رم
-- پورت ۴۴۳ باز باشد
-- دسترسی SSH (root یا sudo)
+👉 MTProto server documentation
 
-### 🚀 نصب پروکسی تلگرام با یک دستور
+Keywords
 
-```bash
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
-```
+MTProto server, MTProto server example, MTProto proxy, Telegram MTProto server, MTProto proxy server, Telegram proxy server.
 
-**این اسکریپت چه کاری انجام می‌دهد:**
-- سیستم را به‌روزرسانی می‌کند
-- Docker و فایروال (ufw) را نصب می‌کند
-- پورت ۴۴۳ را باز می‌کند
-- یک **پروکسی MTProto** روی پورت ۴۴۳ اجرا می‌کند (ایمیج `nineseconds/mtg:2`، با Fake TLS)
-- یک کلید مخفی و لینک آماده برای تلگرام تولید می‌کند
+中文
+MTProto Server 示例
 
-### 📖 نحوه اتصال پروکسی تلگرام
-بعد از نصب، لینکی شبیه این دریافت می‌کنید:
+本项目提供一个用于 Telegram 的 MTProto server 示例，可以作为部署和配置 MTProto 服务器的基础参考。
 
-```
-tg://proxy?server=IP&port=443&secret=KEY
-```
+👉 MTProto server 安装与配置指南
 
-آن را کپی کرده و در تلگرام وارد کنید: **تنظیمات ← داده و حافظه ← تنظیمات پروکسی**.
+什么是 MTProto Server？
 
-### 🔗 راهنمای کامل قدم‌به‌قدم
-اگر تازه‌کار هستید، راهنمای کامل با تصاویر — از اجاره VPS تا اتصال SSH و پیکربندی نهایی — هر مرحله را توضیح می‌دهد:
+MTProto 是 Telegram 使用的通信协议。
 
-👉 **[راهنمای کامل ←](https://tstas69-spec.github.io/mtproto-ir.html)**
-<hr>
+MTProto server 可以部署在自己的 VPS 上，并根据需要配置服务器地址、端口、secret 等连接参数。
 
-<p align="center">
-  <b>⭐ Поставьте звезду, если репозиторий помог! / Star this repo if it helped! / 如果这个仓库有帮助，请给它一个星！ / ضع نجمة إذا أعجبك المستودع! / اگر این مخزن به شما کمک کرد، ستاره بدهید!</b>
-</p>
-<p align="center">
-  <a href="https://tstas69-spec.github.io/">
-    <img src="https://img.shields.io/badge/📖_Full_Guide-tstas69--spec.github.io-blue?style=for-the-badge" alt="Full Guide">
-  </a>
-</p>
+本项目主要用于展示 MTProto server 的基本结构和配置方式。
+
+MTProto Server 配置
+
+基本结构：
+
+Telegram 客户端
+       |
+       v
+  MTProto Server
+       |
+       v
+Telegram infrastructure
+
+完整的安装和配置步骤：
+
+👉 MTProto server 指南
+
+MTProto Proxy
+
+MTProto proxy 是 Telegram 生态中常见的服务器组件。
+
+配置通常涉及：
+
+服务器地址；
+端口；
+secret；
+客户端连接参数。
+
+更多安装资料：
+
+👉 MTProto server installation guide
+
+相关关键词
+
+MTProto server、MTProto server example、MTProto proxy、Telegram MTProto server、Telegram proxy server。
+
+العربية
+مثال MTProto Server
+
+هذا المستودع يحتوي على مثال عملي لإعداد MTProto server لاستخدامه مع Telegram.
+
+يمكن استخدام المشروع كنقطة بداية لفهم بنية خادم MTProto وإعداده على VPS.
+
+👉 دليل تثبيت وإعداد MTProto server
+
+ما هو MTProto Server؟
+
+MTProto هو بروتوكول الاتصال المستخدم في Telegram.
+
+يمكن إعداد MTProto server بشكل مستقل مع تحديد إعدادات الاتصال الخاصة به.
+
+يتضمن الإعداد عادةً:
+
+عنوان الخادم؛
+المنفذ؛
+secret؛
+إعدادات اتصال العميل.
+إعداد MTProto Server
+
+البنية الأساسية:
+
+Telegram client
+       |
+       v
+   MTProto server
+       |
+       v
+Telegram infrastructure
+
+للحصول على خطوات التثبيت والإعداد بالتفصيل:
+
+👉 دليل MTProto server
+
+MTProto Proxy
+
+يُستخدم مصطلح MTProto proxy لوصف خادم وسيط يعتمد على بروتوكول MTProto لاتصالات Telegram.
+
+يمكن العثور على خطوات الإعداد الكاملة هنا:
+
+👉 MTProto server installation guide
+
+كلمات مفتاحية
+
+MTProto server، MTProto server example، MTProto proxy، Telegram MTProto server، Telegram proxy server.
+
+فارسی
+نمونه MTProto Server
+
+این مخزن یک نمونه عملی برای راه‌اندازی و پیکربندی MTProto server برای Telegram ارائه می‌کند.
+
+می‌توان از این پروژه به عنوان نقطه شروع برای راه‌اندازی یک سرور MTProto روی VPS استفاده کرد.
+
+👉 راهنمای نصب و تنظیم MTProto server
+
+MTProto Server چیست؟
+
+MTProto پروتکل ارتباطی مورد استفاده Telegram است.
+
+MTProto server را می‌توان روی یک VPS مستقل نصب و با پارامترهای مورد نیاز پیکربندی کرد.
+
+تنظیمات معمول شامل موارد زیر است:
+
+آدرس سرور؛
+پورت؛
+secret؛
+پارامترهای اتصال کلاینت.
+راه‌اندازی MTProto Server
+
+ساختار کلی:
+
+Telegram client
+       |
+       v
+   MTProto server
+       |
+       v
+Telegram infrastructure
+
+راهنمای کامل نصب و تنظیم:
+
+👉 MTProto server — راهنمای مرحله‌به‌مرحله
+
+MTProto Proxy
+
+MTProto proxy یکی از روش‌های متداول برای ایجاد اتصال Telegram بر اساس پروتکل MTProto است.
+
+برای مشاهده مراحل نصب و تنظیم سرور:
+
+👉 راهنمای MTProto server
+
+کلمات کلیدی
+
+MTProto server، MTProto server example، MTProto proxy، Telegram MTProto server، Telegram proxy server.
+
+Documentation
+
+The repository is intentionally kept simple. The main installation and configuration instructions are maintained separately:
+
+👉 https://tstas69-spec.github.io/
+
+If you are looking for:
+
+MTProto server example
+MTProto server setup
+MTProto proxy configuration
+Telegram MTProto server
+Telegram proxy server
+MTProto server installation
+
+start with the documentation above.
