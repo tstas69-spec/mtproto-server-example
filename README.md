@@ -11,7 +11,13 @@
   <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
 </p>
 
-<h1>MTProto Server Example — One-Command Installer</h1>
+<h1>Прокси сервер MTProto для Telegram</h1>
+
+<p>
+🚀 <strong>MTProto Server Example — One-Command Installer</strong>
+</p>
+
+Прокси сервер MTProto для Telegram — это серверная конфигурация для подключения Telegram-клиентов через протокол MTProto. В этом репозитории показан практический вариант установки такого сервера на собственном VPS одной командой.
 
 Пример настройки собственного MTProto server для Telegram: установка, конфигурация и подключение клиента к серверу.
 
