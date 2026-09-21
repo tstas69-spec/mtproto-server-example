@@ -51,12 +51,10 @@
 
 <a id="russian"></a>
 
-## Русский
+### Русский
 MTProto server для Telegram
 
 <a id="russian"></a>
-
-## Русский
 
 ## Прокси сервер MTProto для Telegram
 
@@ -68,7 +66,7 @@ MTProto server для Telegram
 
 Для установки достаточно выполнить на VPS:
 
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
+<pre><code>sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"</code></pre>
 
 Скрипт автоматически подготовит сервер и запустит MTProto proxy. Ручная установка Docker и настройка firewall не требуются.
 
@@ -186,7 +184,7 @@ install.sh объединяет эти действия в одну команд
 
 Минимальный сценарий выглядит так:
 
-sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"
+<pre><code>sudo bash -c "$(curl -fsSL https://raw.githubusercontent.com/tstas69-spec/mtproto-server-example/main/install.sh)"</code></pre>
 
 После выполнения команды дождитесь завершения установки и сохраните выведенную ссылку tg://proxy.
 
@@ -214,13 +212,9 @@ Telegram proxy server;
 
 <a id="english"></a>
 
-## English
+### English
 
-MTProto Server Example
-
-<a id="english"></a>
-
-## English
+## MTProto Server Example
 
 This repository is a working **MTProto server example**. The `install.sh` script deploys the proxy on your VPS with a single command, without manual Docker or firewall configuration.
 
